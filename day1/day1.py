@@ -25,7 +25,7 @@ def travel(filename):
     return curr_position
 
 
-filename = 'directions.txt'
+filename = 'input.txt'
 final_position = travel(filename)
 print(final_position)
 print(abs(final_position[0]) + abs(final_position[1]))
