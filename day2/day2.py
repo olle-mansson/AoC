@@ -15,4 +15,3 @@ for line in lines:
 
     code.append(current_pos)
 print(code)
-
