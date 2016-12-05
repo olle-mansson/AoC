@@ -1,6 +1,6 @@
-def check_room(line):
+def check_room(candidate):
     char_freq = {}
-    raw_words = line.split('-')
+    raw_words = candidate.split('-')
     for word in raw_words:
         for char in word:
             if char.isdecimal():
@@ -19,8 +19,7 @@ def check_room(line):
 
 
 file = open("input.txt")
-lines = file.readlines()
 count = 0
-for candidate in lines:
-    count += int(check_room(candidate))
+for line in file:
+    count += int(check_room(line))
 print(count)
