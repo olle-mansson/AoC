@@ -14,16 +14,13 @@ print('First password:', "".join(str(x) for x in code))
 i = 0
 real_length = 0
 code = ['_']*8
-index_done = {}
 while real_length < 8:
     i += 1
     m = hashlib.md5((door_ID + str(i)).encode('utf-8')).hexdigest()
     if m[0:5] == "00000":
-        if str(m[5]).isdecimal() and int(m[5]) < 8 and int(m[5]) not in index_done:
-            index_done[int(m[5])] = 1
+        if str(m[5]).isdecimal() and int(m[5]) < 8 and code[int(m[5])] == "_":
             code[int(m[5])] = m[6]
             real_length += 1
             print("".join(str(x) for x in code))
 
 print('Second password:', "".join(str(x) for x in code))
-print("Github demo")
