@@ -26,3 +26,4 @@ while real_length < 8:
             print("".join(str(x) for x in code))
 
 print('Second password:', "".join(str(x) for x in code))
+print("Github demo")
