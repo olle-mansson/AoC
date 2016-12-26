@@ -44,7 +44,8 @@ def valid_ssl(line):
         elif line[i] == '[':
             in_brackets = True
         elif correct_aba_sequence(line, i):
-            out_bracket_cand.add(str(line[i - 1]) + str(line[i]) + str(line[i-1]))
+            out_bracket_cand.add(str(line[i - 1]) +
+                                 str(line[i]) + str(line[i-1]))
     for cand in in_bracket_cand:
         if cand in out_bracket_cand:
             return True
@@ -58,5 +59,5 @@ def number_of_valid_ssl(file):
                 count += 1
     return count
 
-print("Number of IP's with valid TSL's", number_of_valid_tsl(open("input.txt")))
-print("Number of IP's with valid SSL's", number_of_valid_ssl(open("input.txt")), "\n")
+print("# of IP's with valid TSL's", number_of_valid_tsl(open("input.txt")))
+print("# of IP's with valid SSL's", number_of_valid_ssl(open("input.txt")))
